@@ -6,8 +6,8 @@ clean()
     rm "${1}.out"
 }
 find -type f -name "*.tex" | while read file; do
-    output="$1/$(basename $file .tex)"
+    output="$1/"$(basename "$file" .tex)
     echo "Converting file ${file} to ${output}.pdf"
-    pdflatex -interaction=batchmode -jobname="${output}" "$file" -f markdown_github -o "$output"
+    pdflatex -interaction=batchmode -jobname="$output" "$file"
     clean "$output"
 done

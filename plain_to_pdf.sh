@@ -5,6 +5,6 @@ if [ -z "$OPTARG" ];
 else output="$OPTARG";
 fi
 mkdir -p "$output"
-for script in "`dirname $0`/scripts/"*.sh; do
+for script in "`dirname $0`/scripts/convert_"*.sh; do
     "$script" "$output"
 done
